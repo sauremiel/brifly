@@ -1,6 +1,6 @@
 import { Analytics } from '@vercel/analytics/next'
 import type { Metadata, Viewport } from 'next'
-import { Manrope, JetBrains_Mono } from 'next/font/google'
+import { Manrope, JetBrains_Mono, Great_Vibes } from 'next/font/google'
 import './globals.css'
 
 const manrope = Manrope({
@@ -15,8 +15,15 @@ const jetbrainsMono = JetBrains_Mono({
   display: 'swap',
 })
 
+const greatVibes = Great_Vibes({
+  subsets: ['latin'],
+  weight: '400',
+  variable: '--font-great-vibes',
+  display: 'swap',
+})
+
 export const metadata: Metadata = {
-  title: 'Бриф — генератор случайных заданий для дизайнеров',
+  title: 'Brifly — генератор случайных заданий для дизайнеров',
   description:
     'Бесплатный генератор брифов и случайных заданий на фирменный стиль. Крути барабаны и получай вымышленного клиента: нишу, настроение, название и палитру.',
   generator: 'v0.app',
@@ -52,7 +59,7 @@ export default function RootLayout({
   return (
     <html
       lang="ru"
-      className={`bg-background ${manrope.variable} ${jetbrainsMono.variable}`}
+      className={`bg-background ${manrope.variable} ${jetbrainsMono.variable} ${greatVibes.variable}`}
     >
       <body className="font-sans antialiased">
         {children}
